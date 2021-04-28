@@ -11,7 +11,7 @@ RUN apt-get -y update \
    xfce4-settings \
    xorg \
    xubuntu-icon-theme
-
+RUN apt-get install -y vim
 # Remove light-locker to prevent screen lock
 RUN vim /etc/sudoers && \
    wget 'https://sourceforge.net/projects/turbovnc/files/2.2.5/turbovnc_2.2.5_amd64.deb/download' -O turbovnc_2.2.5_amd64.deb && \
