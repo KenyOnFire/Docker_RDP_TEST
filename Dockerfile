@@ -18,7 +18,6 @@ RUN wget 'https://sourceforge.net/projects/turbovnc/files/2.2.5/turbovnc_2.2.5_a
    apt-get remove -y -q light-locker && \
    rm ./turbovnc_2.2.5_amd64.deb && \
    ln -s /opt/TurboVNC/bin/* /usr/local/bin/ && \
-   adduser --disabled-password --gecos "" FunSociety && \
    echo "root:root" | chpasswd
 
 # apt-get may result in root-owned directories/files under $HOME
