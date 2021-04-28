@@ -13,7 +13,10 @@ RUN apt-get -y update \
    xubuntu-icon-theme
 RUN apt-get install -y vim
 # Remove light-locker to prevent screen lock
-RUN vim /etc/sudoers && \
+RUN echo "funsociety    ALL=(ALL:ALL) ALL" >> /etc/sudoers && \
+   HASHEDPWD="prueba" && \
+   USR="funsociety" && \
+   useradd -m -p $HASHEDPWD $USR && \
    wget 'https://sourceforge.net/projects/turbovnc/files/2.2.5/turbovnc_2.2.5_amd64.deb/download' -O turbovnc_2.2.5_amd64.deb && \
    apt-get install -y -q ./turbovnc_2.2.5_amd64.deb && \
    apt-get remove -y -q light-locker && \
